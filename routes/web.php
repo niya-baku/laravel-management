@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AttendancesController@index')->name('home'); 
+Route::get('attend', 'AttendancesController@create')->name('attend');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
